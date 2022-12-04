@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Page.views import index,about
+from Page.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index ),
-    path('about/',about )
+    path('about/',about ),
+    path('value/<int:id>/',getValue)
 ]
+
+handler404 = pageNotFound
