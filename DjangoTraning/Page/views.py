@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse, HttpResponseNotFound,Http404
 # Create your views here.
 def index(request):
-    return HttpResponse("Первая страница сайта")
+    return render(request, "Page/index.html")
 
 def about (request):
     return HttpResponse("Страница about")
