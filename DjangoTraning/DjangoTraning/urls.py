@@ -20,8 +20,9 @@ from Page.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index ),
-    path('about/',about ),
-    path('value/<int:id>/',getValue)
+    path('about/',about, name='about'),
+    # path('value/<int:id>/',getValue)
+    path('value/', getValue)
 ]
 
 handler404 = pageNotFound
