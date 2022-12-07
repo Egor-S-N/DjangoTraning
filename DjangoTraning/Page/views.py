@@ -5,7 +5,9 @@ def index(request):
     return render(request, "Page/index.html")
 
 def about (request):
-    return HttpResponse("Страница about")
+    msg = request.GET['message']
+    cout = len(msg.split())
+    return render(request, 'Page/results.html',{'message':msg, 'cout': cout})
 
 def getValue(request):
     # if (id > 12):
